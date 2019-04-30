@@ -64,7 +64,6 @@
 	<div class="row">
 		<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12"> 
 			<div class="form-group">
-				</select>
 				<input id="titular" type="radio" name="cl_tipo_cliente" value="1" checked="true">
 					Titular
 				</input>

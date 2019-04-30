@@ -31,6 +31,7 @@ class ArticuloController extends Controller
 			->paginate(7);
 
 			$categoria=DB::table('categoria')->where('ca_condicion','=','1')->get();
+			
 			return view('gestion_producto.articulo.index',["articulos"=>$articulos,"searchText"=>$query,"categoria"=>$categoria]);
 
 		}	
@@ -40,7 +41,10 @@ class ArticuloController extends Controller
 	public function create()
 	{
 		$categorias=DB::table('categoria')->where('ca_condicion','=','1')->get();
-		return view("gestion_producto.articulo.create",["categorias"=>$categorias]);
+
+		$talles=DB::table('talle')->get();
+
+		return view("gestion_producto.articulo.create",["categorias"=>$categorias,"talles"=>$talles]);
 	}
 	public function store (ArticuloFormRequest $request)
 	{
